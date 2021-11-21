@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css"/>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <title>Weather App</title>
+</head>
+<body style="background-color: lightgreen;height:100%">
+    <section class="hero is-success" style="border-bottom: 2px solid gray;">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">What's the weather today?</h1>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-offset-4 is-4">
+            <form method="POST">
+              <div class="field has-addons">
+                <div class="control is-expanded">
+                    <input class="input" name="city" type="text" placeholder="City Name">
+                </div>
+                <div class="control">
+                    <button class="button is-success">
+                        Find
+                    </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container text-center">
+        <div class="columns">
+          <div class="column is-offset-4 is-4">
+            {% for weather in weatherlist %}
+            <div class="box" style="background-color:lightgray;border:5px solid gray">
+              <div>
+                <i class='fa fa-map-marker' aria-hidden="true" style='font-size:24px;'></i>
+                <span class="subtitle" style="font-weight: bold;font-size:25px">{{weather.city}}</span>
+                <p class="pt-3" style="font-size:17px;">{{weather.datetime}}</p>
+              </div>
+              
+                    <div>
+                      <br>
+                      <img src="http://openweathermap.org/img/w/{{ weather.icon }}.png" alt="Image" style="vertical-align:top">
+                      <span style="font-weight: bold;font-size:32px;">{{weather.temp}}&deg;</span>
+                    </div>
+                    <br>
+                    <p style="font-size:17px">{{weather.temp_max}}&deg;/{{weather.temp_min}}&deg; Feels like {{weather.feels_like}}&deg;</p>
+                    <span style="font-size:17px">{{weather.desc}}</span>
+              
+              
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </section>
+</body>
+</html>
