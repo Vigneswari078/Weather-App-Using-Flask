@@ -53,18 +53,15 @@
                 <span class="subtitle" style="font-weight: bold;font-size:25px">{{weather.city}}</span>
                 <p class="pt-3" style="font-size:17px;">{{weather.datetime}}</p>
               </div>
-              
-                    <div>
-                      <br>
-                      <img src="http://openweathermap.org/img/w/{{ weather.icon }}.png" alt="Image" style="vertical-align:top">
-                      <span style="font-weight: bold;font-size:32px;">{{weather.temp}}&deg;</span>
-                    </div>
+                 <div>
                     <br>
-                    <p style="font-size:17px">{{weather.temp_max}}&deg;/{{weather.temp_min}}&deg; Feels like {{weather.feels_like}}&deg;</p>
-                    <span style="font-size:17px">{{weather.desc}}</span>
-              
-              
-            </div>
+                    <img src="http://openweathermap.org/img/w/{{ weather.icon }}.png" alt="Image" style="vertical-align:top">
+                    <span style="font-weight: bold;font-size:32px;">{{weather.temp}}&deg;</span>
+                 </div>
+                 <br>
+                 <p style="font-size:17px">{{weather.temp_max}}&deg;/{{weather.temp_min}}&deg; Feels like {{weather.feels_like}}&deg;</p>
+                 <span style="font-size:17px">{{weather.desc}}</span>
+             </div>
             {% endfor %}
           </div>
         </div>
